@@ -26,6 +26,14 @@ class ToDoListVC: UITableViewController {
         return itemArray.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var cell = tableView.cellForRow(at: indexPath)
+        
+        cell?.accessoryType = (cell?.accessoryType == .checkmark) ? .none : .checkmark
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
 
 
